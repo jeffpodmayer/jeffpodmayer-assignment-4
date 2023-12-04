@@ -14,7 +14,7 @@ public class Student {
 	}
 
 	public String toString() {
-		return ID + studentName + course + grade;
+		return ID + ", " + studentName + ", " + course + ", " + grade;
 	}
 
 	public String getID() {

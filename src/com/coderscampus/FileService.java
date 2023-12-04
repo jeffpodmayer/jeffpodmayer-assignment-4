@@ -13,7 +13,7 @@ public class FileService {
 	BufferedWriter writer = null;
 	BufferedReader fileReader = null;
 
-	public Student[] readMasterFile() throws NullPointerException, IOException {
+	public Student[] readMasterFile() throws Exception  {
 		String studentInfo;
 
 		fileReader = new BufferedReader(new FileReader("student-master-list.csv"));

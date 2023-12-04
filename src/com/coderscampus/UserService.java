@@ -1,7 +1,5 @@
 package com.coderscampus;
 
-import java.io.IOException;
-
 public class UserService {
 	FileService fileService = new FileService();
 	
@@ -15,7 +13,7 @@ public class UserService {
 	int j = 0;
 	int k = 0;
 
-	public void divideCourses() throws NullPointerException, IOException {
+	public void divideCourses() {
 		for (Student student : students) {
 			if (student.getCourse().contains("COMPSCI")) {
 				compSciStudents[i] = student;
