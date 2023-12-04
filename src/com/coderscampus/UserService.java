@@ -1,11 +1,10 @@
 package com.coderscampus;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public class UserService {
 	FileService fileService = new FileService();
+	
 	Student[] students = fileService.readMasterFile();
 
 	Student[] compSciStudents = new Student[34];
@@ -16,9 +15,9 @@ public class UserService {
 	int j = 0;
 	int k = 0;
 
-	public void divideCourses() throws NullPointerException, IOException {	
-		for(Student student : students) {
-			if(student.getCourse().contains("COMPSCI")){
+	public void divideCourses() throws NullPointerException, IOException {
+		for (Student student : students) {
+			if (student.getCourse().contains("COMPSCI")) {
 				compSciStudents[i] = student;
 				i++;
 			} else if (student.getCourse().contains("STAT")) {
@@ -29,14 +28,9 @@ public class UserService {
 				k++;
 			}
 		}
-//  	System.out.println(Arrays.toString(compSciStudents));
-//		System.out.println(Arrays.toString(statStudents));
-//		System.out.println(Arrays.toString(apMathStudents));
+
 	}
-	
-	public void sortArraysByGrade(Student [] classType) {
-		Arrays.sort(classType);
-	}
+
 	public UserService() throws Exception {
 		this.students = fileService.readMasterFile();
 	}

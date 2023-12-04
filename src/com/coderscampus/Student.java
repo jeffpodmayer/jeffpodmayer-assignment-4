@@ -1,8 +1,6 @@
 package com.coderscampus;
 
-import java.util.Comparator;
-
-public class Student implements Comparator{
+public class Student {
 	private String ID;
 	private String studentName;
 	private String course;
@@ -14,9 +12,9 @@ public class Student implements Comparator{
 		this.course = course;
 		this.grade = grade;
 	}
-	
+
 	public String toString() {
-		return "ID: " + ID + " Name: " + studentName + " Course: " + course + " Grade: " + grade;
+		return ID + studentName + course + grade;
 	}
 
 	public String getID() {
@@ -51,10 +49,4 @@ public class Student implements Comparator{
 		this.grade = grade;
 	}
 
-
-	public int compare(String grade1, String grade2) {
-	
-	}
-
-	
 }
