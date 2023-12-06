@@ -4,14 +4,13 @@ public class StudentSortApplication {
 
 	public static void main(String[] args) throws Exception {
 		FileService fileService = new FileService();
-		fileService.readMasterFile();
 
-		UserService userService = new UserService();
-		userService.divideCourses();
-
-		fileService.sortAndOutputCourse(userService.compSciStudents, "course1.csv");
-		fileService.sortAndOutputCourse(userService.statStudents, "course2.csv");
-		fileService.sortAndOutputCourse(userService.apMathStudents, "course3.csv");
+		StudentService studentService = new StudentService();
+		studentService.divideCourses();
+		
+		fileService.saveStudentsOfCourseCSV(studentService.getCompSciStudents(), "course1.csv");
+		fileService.saveStudentsOfCourseCSV(studentService.getStatStudents(), "course2.csv");
+		fileService.saveStudentsOfCourseCSV(studentService.getApMathStudents(), "course3.csv");
 
 	}
 }

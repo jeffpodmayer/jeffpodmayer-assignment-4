@@ -5,15 +5,13 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public class FileService {
 	Student[] students = new Student[100];
 	BufferedWriter writer = null;
 	BufferedReader fileReader = null;
 
-	public Student[] readMasterFile() throws Exception  {
+	public Student[] readMasterFile() throws Exception {
 		String studentInfo;
 
 		fileReader = new BufferedReader(new FileReader("student-master-list.csv"));
@@ -30,17 +28,7 @@ public class FileService {
 
 	}
 
-	public void sortAndOutputCourse(Student[] classArray, String fileName) throws IOException {
-		Arrays.sort(classArray, new Comparator<Student>() {
-			@Override
-			public int compare(Student student1, Student student2) {
-				int grade1 = Integer.parseInt(student1.getGrade());
-				int grade2 = Integer.parseInt(student2.getGrade());
-
-				return Integer.compare(grade2, grade1);
-			}
-		});
-
+	public void saveStudentsOfCourseCSV(Student[] classArray, String fileName) throws IOException {
 		try {
 			writer = new BufferedWriter(new FileWriter(fileName));
 			writer.write("Student ID, Student Name, Course, Grade");
